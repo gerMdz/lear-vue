@@ -12,6 +12,19 @@
     <h1>{{ titulo }}</h1>
     <h1>Mi valor: {{ cantidad }}</h1>
     <a :href="enlaceYoutube">link</a>
+    <hr />
+    <h2 v-if="estado"> Cuenta activa </h2>
+    <h2 v-else> Cuenta desactivada </h2>
+    <hr/>
+    <h3 v-if="cantidad > 500">Cantidad: {{ cantidad }}</h3>
+    <h3 v-else-if="cantidad <= 500 && cantidad > 0">
+        Cantidad:
+        <span style="color: red">  {{ cantidad }} </span>
+    </h3>
+    <h3 v-else>
+        Sin Cantidad: {{cantidad}}
+    </h3>
+
 </div>
 <script src="main.js">
 
