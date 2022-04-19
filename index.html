@@ -24,6 +24,12 @@
     <h3 v-else>
         Sin Cantidad: {{cantidad}}
     </h3>
+    <hr>
+    <h4>Servicios </h4>
+    <ul>
+        <li v-for="(item, index) in servicios" :key="index"><small>{{index + 1}} </small>  {{item}}</li>
+
+    </ul>
 
 </div>
 <script src="main.js">
