@@ -7,5 +7,10 @@ const app = Vue.createApp({
             estado: false,
             servicios: ['transferencias', 'pagos', 'giros', 'cheques']
         }
+    },
+    methods: {
+        agregarSaldo() {
+            this.cantidad = this.cantidad + 100
+        }
     }
 }).mount('#app');
