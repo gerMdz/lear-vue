@@ -13,13 +13,13 @@ const app = Vue.createApp({
         agregarSaldo() {
             this.cantidad = this.cantidad + 100
         },
-        disminuirSaldo(){
+        disminuirSaldo( valor){
             if(this.cantidad <= 0) {
                 alert('Saldo 0');
                 this.desactivar = true;
                 return;
             }
-            this.cantidad = this.cantidad - 200
+            this.cantidad = this.cantidad - valor
         }
     }
 }).mount('#app');
