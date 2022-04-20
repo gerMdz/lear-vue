@@ -21,5 +21,13 @@ const app = Vue.createApp({
             }
             this.cantidad = this.cantidad - valor
         }
+    },
+    computed: {
+        colorCantidad() {
+            return this.cantidad > 500 ?  'text-success' : 'text-danger';
+        },
+        mayusTexto() {
+            return this.titulo.toUpperCase()
+        }
     }
 }).mount('#app');
