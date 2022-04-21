@@ -6,7 +6,7 @@ const app = Vue.createApp({
             enlaceYoutube: 'https://www.youtube.com/bluuweb',
             estado: false,
             servicios: ['transferencias', 'pagos', 'giros', 'cheques'],
-            desactivar: false
+            desactivar: false,
         }
     },
     methods: {
@@ -29,5 +29,5 @@ const app = Vue.createApp({
         mayusTexto() {
             return this.titulo.toUpperCase()
         }
-    }
-}).mount('#app');
+    },
+})

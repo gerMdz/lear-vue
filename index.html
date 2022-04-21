@@ -47,14 +47,15 @@
     <button @click="agregarSaldo" class="btn btn-primary">Agregar saldo</button>
     <button @click="disminuirSaldo(70)" class="btn btn-primary" :disabled="desactivar">Restar saldo</button>
 
-</div>
-<script src="main.js">
 
+    <footer-banco />
+</div>
+<script src="main.js"></script>
+<script src="components/Footer.js"></script>
+<script>
+    const mountedApp = app.mount('#app');
 </script>
 
-<!--<script>-->
-<!--    const mountedApp = app.mount('#app')-->
-<!--</script>-->
 
 </body>
 </html>
