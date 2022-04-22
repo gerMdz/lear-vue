@@ -47,8 +47,10 @@
     <button @click="agregarSaldo" class="btn btn-primary">Agregar saldo</button>
     <button @click="disminuirSaldo(70)" class="btn btn-primary" :disabled="desactivar">Restar saldo</button>
 
-
-    <footer-banco />
+    <footer-banco
+            cantidad="50"
+            fecha="Abr 2022"
+    />
 </div>
 <script src="main.js"></script>
 <script src="components/Footer.js"></script>
