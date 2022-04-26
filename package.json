@@ -2,6 +2,7 @@
   "name": "vue-cdn",
   "version": "1.0.0",
   "dependencies": {
+    "@vue/cli": "^5.0.4",
     "vue": "^3.2.33"
   }
 }
