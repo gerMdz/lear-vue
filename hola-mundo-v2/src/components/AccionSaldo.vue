@@ -1,11 +1,14 @@
 <template>
-<button>Aumentar / Disuminuir Saldo</button>
+<button>{{texto}}</button>
 
 </template>
 
 <script>
 export default {
-  name: "AccionSaldo"
+  name: "AccionSaldo",
+  props: {
+    texto: String
+  }
 }
 </script>
 
