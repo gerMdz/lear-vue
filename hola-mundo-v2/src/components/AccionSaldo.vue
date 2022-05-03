@@ -1,5 +1,5 @@
 <template>
-<button>{{texto}}</button>
+<button @click="accionHijo" :disabled="desactivar" >{{texto}}</button>
 
 </template>
 
@@ -7,7 +7,16 @@
 export default {
   name: "AccionSaldo",
   props: {
-    texto: String
+    texto: String,
+    desactivar: {
+      type: String,
+      default: false
+    }
+  },
+  methods: {
+    accionHijo() {
+      this.$emit('accion')
+    }
   }
 }
 </script>
