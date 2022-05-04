@@ -9,7 +9,7 @@ export default {
   props: {
     texto: String,
     desactivar: {
-      type: String,
+      type: Boolean,
       default: false
     }
   },
