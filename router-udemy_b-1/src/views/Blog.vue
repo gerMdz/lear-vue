@@ -1,11 +1,13 @@
 <template>
-  <Titulo texto="Título de mi blog" />
-<!--  <button @click="consumerApi"> Consumer API </button>-->
+  <Titulo texto="Título de mi blog"/>
+  <!--  <button @click="consumerApi"> Consumer API </button>-->
   <ul v-for="item in arrayBlog" :key="item.id">
-    <li>{{ item.title }}</li>
+    <li>
+      <router-link :to="`/blog/${item.id}`">
+        {{ item.title }}
+      </router-link>
+    </li>
   </ul>
-
-
 </template>
 
 <script>
