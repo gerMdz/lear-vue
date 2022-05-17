@@ -1,7 +1,7 @@
 <template>
   <Titulo texto="Ruta con parámetros"/>
-  <h2>Parametro {{ $route.params.id }} - {{itemBlog.title}}</h2>
-  <div v-bind:id="consumerApi">
+  <h5>Parametro {{ $route.params.id }} - {{itemBlog.title}}</h5>
+  <div >
     {{itemBlog.body}}
   </div>
 
@@ -28,8 +28,8 @@ export default {
     async consumerApi() {
       try {
 
-        let id = this.$route;
-        const data = await fetch('https://jsonplaceholder.typicode.com/posts/'+ id.params.id)
+        let ruta = this.$route;
+        const data = await fetch('https://jsonplaceholder.typicode.com/posts/'+ ruta.params.id)
         this.itemBlog = await data.json()
       } catch (e) {
         console.log(e)
