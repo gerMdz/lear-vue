@@ -1,8 +1,10 @@
 <template>
   <Titulo texto="Ruta con parámetros"/>
-  <h5>Parametro {{ $route.params.id }} - {{itemBlog.title}}</h5>
+  <h3>{{articulo.userId}}</h3>
+  <h5>Parametro {{ $route.params.id }} - {{articulo.title}}</h5>
   <div >
-    {{itemBlog.body}}
+
+    <p><i>{{articulo.id}}</i> {{articulo.body}}</p>
   </div>
 
 </template>
@@ -19,25 +21,24 @@ export default {
   }
   , data() {
     return {
-      itemBlog: Object
+      articulo: {}
     }
   }
   ,
   methods: {
-
-    async consumerApi() {
+    async consumerArticulo() {
       try {
-
-        let ruta = this.$route;
-        const data = await fetch('https://jsonplaceholder.typicode.com/posts/'+ ruta.params.id)
-        this.itemBlog = await data.json()
+        let $route = this.$route;
+        const data = await fetch(`https://jsonplaceholder.typicode.com/posts/${$route.params.id}`)
+        console.log(data);
+        this.articulo = await data.json()
       } catch (e) {
         console.log(e)
       }
     }
   },
   created() {
-    this.consumerApi()
+    this.consumerArticulo()
   }
 }
 </script>
