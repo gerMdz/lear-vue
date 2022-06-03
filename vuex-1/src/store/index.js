@@ -2,7 +2,7 @@ import { createStore } from 'vuex'
 
 export default createStore({
   state: {
-    contador: 100
+    contador: 51
   },
   getters: {
   },
