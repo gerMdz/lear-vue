@@ -1,16 +1,30 @@
 <template>
   <div class="home">
     <img alt="Vue logo" src="../assets/logo.png">
-    <h1>Contador {{ $store.state.contador}}</h1>
+    <h1
+        :style="colorContador"
+    >
+      {{titulo}}: {{ contador }}
+    </h1>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
+import {mapState} from 'vuex'
 
 export default {
   name: 'HomeView',
-  components: {
+  data() {
+    return {
+      titulo: 'Mi contador V'
+    }
+  },
+  components: {},
+  computed: {
+    ...mapState(["contador"]),
+    colorContador() {
+      return [this.contador > 51 ? {'color': 'green'} : {'color': 'red'}]
+    }
   }
 }
 </script>
