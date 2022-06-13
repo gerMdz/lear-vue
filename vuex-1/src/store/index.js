@@ -7,6 +7,9 @@ export default createStore({
   getters: {
   },
   mutations: {
+    incrementar(state){
+      state.contador = state.contador + 10
+    }
   },
   actions: {
   },

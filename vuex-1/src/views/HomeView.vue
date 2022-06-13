@@ -6,11 +6,13 @@
     >
       {{titulo}}: {{ contador }}
     </h1>
+    <button @click="incrementar">Aumentar</button>
+
   </div>
 </template>
 
 <script>
-import {mapState} from 'vuex'
+import {mapState, mapMutations} from 'vuex'
 
 export default {
   name: 'HomeView',
@@ -25,6 +27,9 @@ export default {
     colorContador() {
       return [this.contador > 51 ? {'color': 'green'} : {'color': 'red'}]
     }
+  },
+  methods: {
+    ...mapMutations(['incrementar'])
   }
 }
 </script>
