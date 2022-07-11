@@ -1,5 +1,5 @@
 <template>
-  <button @click="accionDisminuir">Disminuir</button>
+  <button @click="accionDisminuir(35)">Disminuir</button>
 </template>
 
 <script>
