@@ -3,6 +3,9 @@
     <h1>This is an about page</h1>
     <h2>Contador {{ $store.state.contador}}</h2>
     <BtnDisminuir />
+    <input type="text" v-model="texto">
+    <h2> {{texto}} </h2>
+
   </div>
 </template>
 <script>
@@ -12,5 +15,10 @@ export default {
   components: {
     BtnDisminuir
   },
+  data(){
+    return {
+      texto: 'Mi texto'
+    }
+  }
 }
 </script>
