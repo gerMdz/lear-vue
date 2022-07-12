@@ -6,11 +6,18 @@
     >
       {{titulo}}: {{ contador }}
     </h1>
+    <button @click="accionIncrementar">Aumentar</button>
+    <BtnDisminuir />
+    <hr>
+    <BotonAccion :estado="true"/>
+    <BotonAccion :estado="false"/>
   </div>
 </template>
 
 <script>
-import {mapState} from 'vuex'
+import BtnDisminuir from "@/components/BtnDisminuir";
+import BotonAccion from "@/components/BotonAccion";
+import {mapState, mapMutations, mapActions} from 'vuex'
 
 export default {
   name: 'HomeView',
@@ -19,12 +26,19 @@ export default {
       titulo: 'Mi contador V'
     }
   },
-  components: {},
+  components: {
+    BtnDisminuir,
+    BotonAccion
+  },
   computed: {
     ...mapState(["contador"]),
     colorContador() {
       return [this.contador > 51 ? {'color': 'green'} : {'color': 'red'}]
     }
+  },
+  methods: {
+    ...mapMutations(['incrementar']),
+    ...mapActions(['accionIncrementar'])
   }
 }
 </script>
