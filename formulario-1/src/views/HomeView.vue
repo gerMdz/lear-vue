@@ -8,22 +8,22 @@
     >
     <div class="form-check form-check-inline">
       <input
-      type="checkbox"
-      id="check-1"
-      class="form-check-input"
-      v-model="tarea.categorias"
-      value="JScript"
+          type="checkbox"
+          id="check-1"
+          class="form-check-input"
+          v-model="tarea.categorias"
+          value="JScript"
       >
       <label for="check-1" class="form-check-label"> JScript</label>
 
     </div>
     <div class="form-check form-check-inline">
       <input
-      type="checkbox"
-      id="check-2"
-      class="form-check-input"
-      v-model="tarea.categorias"
-      value="Node"
+          type="checkbox"
+          id="check-2"
+          class="form-check-input"
+          v-model="tarea.categorias"
+          value="Node"
       >
       <label for="check-2" class="form-check-label"> Node</label>
 
@@ -54,8 +54,16 @@
 
     </div>
 
+    <div class="mt-2">
+      <input
+          type="number"
+          class="form-control"
+          v-model.number="tarea.numero"
+      >
+    </div>
+
   </form>
-  <p>{{tarea}}</p>
+  <p>{{ tarea }}</p>
 </template>
 
 <script>
@@ -64,15 +72,14 @@
 
 export default {
   name: 'HomeView',
-  components: {
-
-  },
-  data(){
+  components: {},
+  data() {
     return {
       tarea: {
         nombre: '',
         categorias: [],
         opciones: '',
+        numero: 0
       }
     }
   }
