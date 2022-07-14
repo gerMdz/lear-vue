@@ -28,6 +28,32 @@
       <label for="check-2" class="form-check-label"> Node</label>
 
     </div>
+
+    <div class="mt-2">
+      <div class="form-check form-check-inline">
+        <input
+            type="radio"
+            id="radio-1"
+            class="form-check-input"
+            v-model="tarea.opciones"
+            value="Si"
+        >
+        <label for="radio-1" class="form-check-label"> Si</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input
+            type="radio"
+            id="radio-2"
+            class="form-check-input"
+            v-model="tarea.opciones"
+            value="No"
+        >
+        <label for="radio-2" class="form-check-label"> No</label>
+
+      </div>
+
+    </div>
+
   </form>
   <p>{{tarea}}</p>
 </template>
@@ -45,7 +71,8 @@ export default {
     return {
       tarea: {
         nombre: '',
-        categorias: []
+        categorias: [],
+        opciones: '',
       }
     }
   }
