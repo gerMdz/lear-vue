@@ -61,7 +61,7 @@
           v-model.number="tarea.numero"
       >
     </div>
-    <button class="btn btn-dark mt-2 btn-block" type="submit" :disabled="false">
+    <button class="btn btn-dark mt-2 btn-block" type="submit" :disabled="bloquear">
       Procesar
     </button>
 
@@ -93,6 +93,11 @@ export default {
         console.log('vacío')
         return
       }
+    }
+  },
+  computed: {
+    bloquear() {
+      return this.tarea.nombre.trim() === "";
     }
   }
 }
