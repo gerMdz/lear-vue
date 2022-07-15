@@ -1,10 +1,10 @@
 <template>
-  <form>
+  <form @submit.prevent="procesarFormulario">
     <input
         type="text"
         class="form-control my-2"
         placeholder="Ingrese nombre"
-        v-model="tarea.nombre"
+        v-model.trim="tarea.nombre"
     >
     <div class="form-check form-check-inline">
       <input
@@ -61,6 +61,9 @@
           v-model.number="tarea.numero"
       >
     </div>
+    <button class="btn btn-dark mt-2 btn-block" type="submit" >
+      Procesar
+    </button>
 
   </form>
   <p>{{ tarea }}</p>
@@ -81,6 +84,11 @@ export default {
         opciones: '',
         numero: 0
       }
+    }
+  },
+  methods: {
+    procesarFormulario(){
+      console.log(this.tarea)
     }
   }
 }
