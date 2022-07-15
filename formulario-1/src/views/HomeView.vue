@@ -89,9 +89,17 @@ export default {
   methods: {
     procesarFormulario() {
       console.log(this.tarea)
-      if (this.tarea.nombre.trim() === "vacio") {
+      if (this.tarea.nombre.trim() === "") {
         console.log('vacío')
         return
+      }
+      console.log('enviamos los datos')
+      // enviaremos los datos
+      this.tarea = {
+        nombre: '',
+        categorias: [],
+        opciones: '',
+        numero: 0
       }
     }
   },
