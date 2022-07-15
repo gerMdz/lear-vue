@@ -61,7 +61,7 @@
           v-model.number="tarea.numero"
       >
     </div>
-    <button class="btn btn-dark mt-2 btn-block" type="submit" >
+    <button class="btn btn-dark mt-2 btn-block" type="submit" :disabled="false">
       Procesar
     </button>
 
@@ -87,8 +87,12 @@ export default {
     }
   },
   methods: {
-    procesarFormulario(){
+    procesarFormulario() {
       console.log(this.tarea)
+      if (this.tarea.nombre.trim() === "vacio") {
+        console.log('vacío')
+        return
+      }
     }
   }
 }
