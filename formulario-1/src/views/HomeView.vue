@@ -2,19 +2,22 @@
   <form @submit.prevent="procesarFormulario">
     <Input :tarea="tarea" />
   </form>
-  <p>{{ tarea }}</p>
+  <ListaTareas />
 </template>
 
 <script>
 // @ is an alias to /src
 import Input from "@/components/Input";
+import ListaTareas from "@/components/ListaTareas";
 import {mapActions} from 'vuex'
+
 const shortid = require('shortid')
 
 export default {
   name: 'HomeView',
   components: {
-    Input
+    Input,
+    ListaTareas
   },
   data() {
     return {
@@ -42,6 +45,7 @@ export default {
       // enviaremos los datos
       this.setTareas(this.tarea)
       this.tarea = {
+        id: '',
         nombre: '',
         categorias: [],
         opciones: '',
