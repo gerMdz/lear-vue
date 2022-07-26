@@ -10,8 +10,17 @@
 </style>
 <script>
 import Navbar from "@/components/Navbar";
+import {mapActions} from 'vuex'
 
 export default {
-  components: {Navbar}
+  components: {
+    Navbar
+  },
+  methods: {
+    ...mapActions(['cargarLocalStorage'])
+  },
+  created() {
+    this.cargarLocalStorage()
+  }
 }
 </script>
