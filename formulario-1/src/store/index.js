@@ -73,14 +73,39 @@ export default createStore({
             }
             commit('set', tarea)
         },
-        deleteTareas({commit}, id) {
-            commit('eliminar', id)
+
+        async deleteTareas({commit}, id) {
+
+            try {
+                const res = await fetch(`https://api-vue-udemy-3b734-default-rtdb.firebaseio.com/tareas/${id}.json`, {
+                        method: 'DELETE'
+                    }
+                )
+                commit('eliminar', id)
+            } catch (e) {
+                console.log(e)
+            }
+
         },
         setTarea({commit}, id) {
             commit('tarea', id)
         },
-        updateTarea({commit}, tarea) {
-            commit('update', tarea)
+        async updateTarea({commit}, tarea) {
+            try {
+                const res = await fetch(`https://api-vue-udemy-3b734-default-rtdb.firebaseio.com/tareas/${tarea.id}.json`, {
+                    method: 'PATCH',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(tarea),
+
+                })
+                const dataDB = await res.json()
+                commit('update', dataDB)
+            } catch (e) {
+                console.log(e)
+            }
+
         }
     },
     modules: {}
