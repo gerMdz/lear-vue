@@ -57,6 +57,8 @@ const mensaje = (nombre) => {
 }
 
 
+
+
 const resultado3 = mensaje('Gerardo')
 
 console.log(resultado3)
@@ -66,3 +68,25 @@ const suma3 = (num= 0) => {
 }
 
 suma3();
+
+// template string
+
+const numero = (num1, num2) =>  (`el nro es. ${num1 + num2}`)
+
+
+const result = numero(15, 30)
+
+console.log(result)
+
+//Objetos
+
+const mascotas = {
+    nombre: 'Tom',
+    especie: 'Gato',
+    edad: 10,
+    vivo: true,
+    caracter: ['peludo', 'negro']
+}
+
+mascotas.id = 1;
+console.log(mascotas.caracter[0])
