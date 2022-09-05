@@ -56,6 +56,22 @@
 <script src="components/Footer.js"></script>
 <script>
     const mountedApp = app.mount('#app');
+
+    // fetch api
+
+    // const url_pokemon = 'https://pokeapi.co/api/v2/pokemon/';
+
+    // fetch espera una promesa
+    fetch('https://pokeapi.co/api/v2/pokemon/')
+        .then(res => res.json())
+        .then(data => {
+            // console.log(data.results)
+            data.results.forEach( element => {
+                console.log(element.name)
+            })
+        })
+        .catch(error => console.log(error))
+    ;
 </script>
 
 
