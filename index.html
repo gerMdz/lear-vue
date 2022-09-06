@@ -66,12 +66,26 @@
         .then(res => res.json())
         .then(data => {
             // console.log(data.results)
-            data.results.forEach( element => {
-                console.log(element.name)
+            data.results.forEach(element => {
+                // console.log(element.name)
             })
         })
         .catch(error => console.log(error))
     ;
+
+    // async y await
+
+    const obtenerPokemones = async () => {
+        try {
+            const respuesta = await fetch('https://pokeapi.co/api/v2/pokemon/')
+            const data = await respuesta.json()
+            console.log(data.results)
+        } catch (e) {
+            console.log(e)
+        }
+    }
+
+    obtenerPokemones();
 </script>
 
 
