@@ -78,8 +78,13 @@
     const obtenerPokemones = async () => {
         try {
             const respuesta = await fetch('https://pokeapi.co/api/v2/pokemon/')
+            let arrayNombres = []
             const data = await respuesta.json()
-            console.log(data.results)
+            data.results.forEach(element => {
+                arrayNombres.push(element.name)
+            })
+            const arrayName = data.results.map(poke => poke.name )
+            // console.log(arrayNombres)
         } catch (e) {
             console.log(e)
         }
