@@ -83,8 +83,14 @@
             data.results.forEach(element => {
                 arrayNombres.push(element.name)
             })
-            const arrayName = data.results.map(poke => poke.name )
-            // console.log(arrayNombres)
+            // map
+            // const arrayName = data.results.map(poke => poke.name )
+
+            // filter
+            // const arrayFilter = data.results.filter(poke => poke.name === 'raticate' )
+            // filter negativo
+            const arrayFilter = data.results.filter(poke => poke.name !== 'raticate' )
+            console.log(arrayFilter)
         } catch (e) {
             console.log(e)
         }
