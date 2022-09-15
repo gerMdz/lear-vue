@@ -1,6 +1,7 @@
 <script setup>
 import HelloWorld from './components/HelloWorld.vue'
 import TheWelcome from './components/TheWelcome.vue'
+const name = 'VUE dinámico'
 </script>
 
 <template>
@@ -12,7 +13,7 @@ import TheWelcome from './components/TheWelcome.vue'
     </div>
   </header>
   <section>
-    <h1> Hola desde Mendoza</h1>
+    <h1 > Hola desde Mendoza <br/> {{name}}</h1>
   </section>
 
   <main>
@@ -29,7 +30,9 @@ header {
   display: block;
   margin: 0 auto 2rem;
 }
-
+h1 {
+  color: #1a1c80;
+}
 @media (min-width: 1024px) {
   header {
     display: flex;
