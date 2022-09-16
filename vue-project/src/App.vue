@@ -2,6 +2,9 @@
 import HelloWorld from './components/HelloWorld.vue'
 import TheWelcome from './components/TheWelcome.vue'
 const name = 'VUE dinámico'
+const styleColor = "color: #1a1c80"
+const arrayColores = ["blue", "red", "peru"]
+const active = false
 </script>
 
 <template>
@@ -13,7 +16,10 @@ const name = 'VUE dinámico'
     </div>
   </header>
   <section>
-    <h1 > Hola desde Mendoza <br/> {{name}}</h1>
+    <h1 > Hola desde Mendoza <br/> {{name.toUpperCase()}}</h1>
+    <h2>{{arrayColores}}</h2>
+    <h2 :style="`color: ${arrayColores[2]}`"> Azul </h2>
+    <h3> {{active ? 'si' : 'no'}} </h3>
   </section>
 
   <main>
@@ -31,7 +37,7 @@ header {
   margin: 0 auto 2rem;
 }
 h1 {
-  color: #1a1c80;
+  color: red;
 }
 @media (min-width: 1024px) {
   header {
