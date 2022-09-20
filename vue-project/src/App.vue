@@ -20,6 +20,10 @@ const active = false
     <h2>{{arrayColores}}</h2>
     <h2 :style="`color: ${arrayColores[2]}`"> Azul </h2>
     <h3> {{active ? 'si' : 'no'}} </h3>
+    <p > <span v-if="active"> Si </span><span v-else> No </span> Estoy activo</p>
+
+    <p v-show="active"> Por show</p>
+
   </section>
 
   <main>
