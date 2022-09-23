@@ -27,3 +27,18 @@ npm run dev
 ```sh
 npm run build
 ```
+
+
+##### template + v+for + v-if
+```
+    <ul>
+      <template v-for="item in arrayProductos" :key="item.name">
+        <li
+            v-if="item.stock > 0"
+        >
+          {{ item.name }} - {{ item.price }}
+        </li>
+      </template>
+
+    </ul>
+```

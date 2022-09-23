@@ -12,16 +12,19 @@ const arrayProductos = [
     name: "Manzana",
     price: "$1.00",
     description: "por kilo",
+    stock: 0
   },
   {
     name: "Huevos",
     price: "$2.00",
     description: "por Docena",
+    stock: 10
   },
   {
     name: "Melón",
     price: "$3.00",
     description: "por Unidad",
+    stock: 20
   }
 ]
 
@@ -73,22 +76,33 @@ const arrayFrutas = ["murder", "surprise", "forest", "month", "decrease"];
     <!--      </li>-->
     <!--    </ul>-->
 
+    <!--    <ul>-->
+    <!--      <li v-for="producto in arrayProductos"-->
+    <!--          :key="producto.name"-->
+    <!--      >-->
+    <!--        &lt;!&ndash;        {{producto.name}}&ndash;&gt;-->
+    <!--        <ul>-->
+    <!--          <li v-for="(value , propiedades) in producto"-->
+    <!--              :key="value">-->
+    <!--            <ul>-->
+    <!--              <li> {{ propiedades }}: {{ value }}</li>-->
+
+    <!--            </ul>-->
+    <!--          </li>-->
+    <!--        </ul>-->
+    <!--      </li>-->
+
+
+    <!--    </ul>-->
+
     <ul>
-      <li v-for="producto in arrayProductos"
-          :key="producto.name"
-      >
-        <!--        {{producto.name}}-->
-        <ul>
-          <li v-for="(value , propiedades) in producto"
-              :key="value">
-            <ul>
-              <li> {{ propiedades }}: {{ value }}</li>
-
-            </ul>
-          </li>
-        </ul>
-      </li>
-
+      <template v-for="item in arrayProductos" :key="item.name">
+        <li
+            v-if="item.stock > 0"
+        >
+          {{ item.name }} - {{ item.price }}
+        </li>
+      </template>
 
     </ul>
 
