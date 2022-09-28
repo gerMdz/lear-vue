@@ -7,6 +7,14 @@ const styleColor = "color: #1a1c80"
 const arrayColores = ["blue", "red", "peru"]
 const active = false
 
+
+// método -methods
+
+const handleClick = (message) => {
+  console.log(message)
+}
+
+
 const arrayProductos = [
   {
     name: "Manzana",
@@ -106,6 +114,14 @@ const arrayFrutas = ["murder", "surprise", "forest", "month", "decrease"];
 
     </ul>
 
+  </section>
+
+  <section>
+    <h2>Ejemplo v-on</h2>
+
+    <button @click="handleClick('Text 1')">
+      Activame
+    </button>
   </section>
 
   <main>
