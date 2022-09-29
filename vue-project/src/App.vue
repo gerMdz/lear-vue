@@ -14,6 +14,14 @@ const handleClick = (message) => {
   console.log(message)
 }
 
+const increment = () => {
+  console.log('Success')
+
+  counter ++;
+
+}
+
+let counter = 0;
 
 const arrayProductos = [
   {
@@ -119,9 +127,23 @@ const arrayFrutas = ["murder", "surprise", "forest", "month", "decrease"];
   <section>
     <h2>Ejemplo v-on</h2>
 
-    <button @click="handleClick('Text 1')">
-      Activame
+    <button @click.right.prevent="handleClick('Text Right')">
+      Activame Right
     </button>
+    <button @click.left="handleClick('Text Left')">
+      Activame Left
+    </button>
+    <button @click.middle="handleClick('Text Middle')">
+      Activame Middle
+    </button>
+  </section>
+
+  <section>
+    <h4>{{counter}}</h4>
+    <button @click="increment">
+      Aumentar
+    </button>
+
   </section>
 
   <main>
