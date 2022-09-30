@@ -2,6 +2,9 @@
 import HelloWorld from './components/HelloWorld.vue'
 import TheWelcome from './components/TheWelcome.vue'
 
+import { ref } from "vue";
+
+
 const name = 'VUE dinámico'
 const styleColor = "color: #1a1c80"
 const arrayColores = ["blue", "red", "peru"]
@@ -14,14 +17,16 @@ const handleClick = (message) => {
   console.log(message)
 }
 
+const counter = ref(0);
+
 const increment = () => {
   console.log('Success')
 
-  counter ++;
+  counter.value ++;
 
 }
 
-let counter = 0;
+
 
 const arrayProductos = [
   {
