@@ -18,15 +18,35 @@ const handleClick = (message) => {
 }
 
 const counter = ref(0);
+let counterColor = ref('#0a0a0a');
 
 const increment = () => {
   console.log('Success')
 
   counter.value ++;
+  if(counter > 0){
+    counterColor.value = '#76ea0a'
+  }
+
 
 }
 
+const decrement = () => {
+  console.log('Danger')
 
+  counter.value --;
+  if(counter < 0){
+    counterColor.value = '#a90a17'
+  }
+
+}
+
+const resetCounter = () => {
+  console.log('Warning')
+
+  counter.value = 0;
+
+}
 
 const arrayProductos = [
   {
@@ -144,9 +164,15 @@ const arrayFrutas = ["murder", "surprise", "forest", "month", "decrease"];
   </section>
 
   <section>
-    <h4>{{counter}}</h4>
+    <h4 :class="counter > 0 ? 'positive':'negative' ">{{counter}}</h4>
     <button @click="increment">
       Aumentar
+    </button>
+    <button @click="decrement">
+      Disminuir
+    </button>
+    <button @click="resetCounter">
+      Reset
     </button>
 
   </section>
@@ -168,6 +194,15 @@ header {
 
 h1 {
   color: red;
+}
+.positive{
+  color: green;
+}
+.negative{
+  color: red;
+}
+.neutro {
+  color: black;
 }
 
 @media (min-width: 1024px) {
