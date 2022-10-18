@@ -2,7 +2,7 @@
 import HelloWorld from './components/HelloWorld.vue'
 import TheWelcome from './components/TheWelcome.vue'
 
-import { ref } from "vue";
+import { ref, computed } from "vue";
 
 
 const name = 'VUE dinámico'
@@ -78,6 +78,18 @@ const objetoProducto =
     }
 
 const arrayFrutas = ["murder", "surprise", "forest", "month", "decrease"];
+
+const classCounter = computed(() => {
+  if(counter.value == 0){
+    return 'neutro'
+  }
+  if(counter.value > 0){
+    return 'positive'
+  }
+  if(counter.value < 0){
+    return 'negative'
+  }
+})
 </script>
 
 <template>
@@ -164,7 +176,7 @@ const arrayFrutas = ["murder", "surprise", "forest", "month", "decrease"];
   </section>
 
   <section>
-    <h4 :class="counter > 0 ? 'positive':'negative' ">{{counter}}</h4>
+    <h4 :class="classCounter">{{counter}}</h4>
     <button @click="increment">
       Aumentar
     </button>
