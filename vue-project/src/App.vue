@@ -2,7 +2,7 @@
 import HelloWorld from './components/HelloWorld.vue'
 import TheWelcome from './components/TheWelcome.vue'
 
-import { ref, computed } from "vue";
+import {ref, computed} from "vue";
 
 
 const name = 'VUE dinámico'
@@ -18,24 +18,30 @@ const handleClick = (message) => {
 }
 
 const counter = ref(0);
+let addRepeat = ref(false);
 let counterColor = ref('#0a0a0a');
 
 const increment = () => {
   console.log('Success')
-
-  counter.value ++;
-  if(counter > 0){
+  counter.value++;
+  addRepeat = !arrayFavoritos.includes(counter.value);
+  if (counter > 0) {
     counterColor.value = '#76ea0a'
   }
 
 
 }
 
+function checkExiste(arrayFavorito) {
+  return true;
+}
+
 const decrement = () => {
   console.log('Danger')
 
-  counter.value --;
-  if(counter < 0){
+  counter.value--;
+  addRepeat = !arrayFavoritos.includes(counter.value);
+  if (counter < 0) {
     counterColor.value = '#a90a17'
   }
 
@@ -45,8 +51,19 @@ const resetCounter = () => {
   console.log('Warning')
 
   counter.value = 0;
+  addRepeat = !arrayFavoritos.includes(counter.value);
 
 }
+
+const agregarFavorito = () => {
+  let actual = counter.value;
+  arrayFavoritos.push(actual);
+
+  console.log(actual)
+
+}
+
+const arrayFavoritos = [];
 
 const arrayProductos = [
   {
@@ -80,15 +97,25 @@ const objetoProducto =
 const arrayFrutas = ["murder", "surprise", "forest", "month", "decrease"];
 
 const classCounter = computed(() => {
-  if(counter.value == 0){
+  if (counter.value == 0) {
     return 'neutro'
   }
-  if(counter.value > 0){
+  if (counter.value > 0) {
     return 'positive'
   }
-  if(counter.value < 0){
+  if (counter.value < 0) {
     return 'negative'
   }
+})
+
+
+const repeatFavorito = computed(() => {
+    if(addRepeat.value == true){
+      return true
+    }
+    if(addRepeat.value == false){
+      return false
+    }
 })
 </script>
 
@@ -112,6 +139,20 @@ const classCounter = computed(() => {
         [{{ index }}] {{ propiedades }}= {{ value }}
       </li>
     </ul>
+    <h4 class="text-center"> Tus favoritos </h4>
+    <ul>
+      <li
+          v-for="(value , propiedades, index) in arrayFavoritos"
+          :key="value"
+      >
+        [{{ index }}] {{ propiedades }}= {{ value }}
+      </li>
+    </ul>
+
+    <h6 class="text-center"> -- </h6>
+
+    <hr>
+
     <h2>{{ arrayColores }}</h2>
     <h2 :style="`color: ${arrayColores[2]}`"> Azul </h2>
     <h3> {{ active ? 'si' : 'no' }} </h3>
@@ -176,7 +217,7 @@ const classCounter = computed(() => {
   </section>
 
   <section>
-    <h4 :class="classCounter">{{counter}}</h4>
+    <h4 :class="classCounter">{{ counter }}</h4>
     <button @click="increment">
       Aumentar
     </button>
@@ -185,6 +226,10 @@ const classCounter = computed(() => {
     </button>
     <button @click="resetCounter">
       Reset
+    </button>
+
+    <button  @click="agregarFavorito">
+      Add
     </button>
 
   </section>
@@ -207,12 +252,15 @@ header {
 h1 {
   color: red;
 }
-.positive{
+
+.positive {
   color: green;
 }
-.negative{
+
+.negative {
   color: red;
 }
+
 .neutro {
   color: black;
 }
