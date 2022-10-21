@@ -18,13 +18,14 @@ const handleClick = (message) => {
 }
 
 const counter = ref(0);
-let addRepeat = ref(false);
+const arrayFavoritos = ref([])
+
 let counterColor = ref('#0a0a0a');
 
 const increment = () => {
   console.log('Success')
   counter.value++;
-  addRepeat = !arrayFavoritos.includes(counter.value);
+
   if (counter > 0) {
     counterColor.value = '#76ea0a'
   }
@@ -40,7 +41,7 @@ const decrement = () => {
   console.log('Danger')
 
   counter.value--;
-  addRepeat = !arrayFavoritos.includes(counter.value);
+
   if (counter < 0) {
     counterColor.value = '#a90a17'
   }
@@ -51,19 +52,19 @@ const resetCounter = () => {
   console.log('Warning')
 
   counter.value = 0;
-  addRepeat = !arrayFavoritos.includes(counter.value);
+
 
 }
 
+// add en el curso
 const agregarFavorito = () => {
-  let actual = counter.value;
-  arrayFavoritos.push(actual);
 
-  console.log(actual)
+
+  arrayFavoritos.value.push(counter.value);
+
 
 }
 
-const arrayFavoritos = [];
 
 const arrayProductos = [
   {
@@ -108,14 +109,10 @@ const classCounter = computed(() => {
   }
 })
 
-
 const repeatFavorito = computed(() => {
-    if(addRepeat.value == true){
-      return true
-    }
-    if(addRepeat.value == false){
-      return false
-    }
+  const numSearch = arrayFavoritos.value.find(num => num === counter.value)
+  if (numSearch === 0) return true
+  return numSearch;
 })
 </script>
 
@@ -142,10 +139,10 @@ const repeatFavorito = computed(() => {
     <h4 class="text-center"> Tus favoritos </h4>
     <ul>
       <li
-          v-for="(value , propiedades, index) in arrayFavoritos"
+          v-for="(value, index) in arrayFavoritos"
           :key="value"
       >
-        [{{ index }}] {{ propiedades }}= {{ value }}
+        {{ value }}
       </li>
     </ul>
 
@@ -227,10 +224,12 @@ const repeatFavorito = computed(() => {
     <button @click="resetCounter">
       Reset
     </button>
-
-    <button  @click="agregarFavorito">
+    <!-- add es agregarFavoritos-->
+    <button @click="agregarFavorito" :disabled="repeatFavorito">
       Add
     </button>
+    <br/>
+    {{ arrayFavoritos }}
 
   </section>
 
