@@ -136,15 +136,7 @@ const repeatFavorito = computed(() => {
         [{{ index }}] {{ propiedades }}= {{ value }}
       </li>
     </ul>
-    <h4 class="text-center"> Tus favoritos </h4>
-    <ul>
-      <li
-          v-for="(value, index) in arrayFavoritos"
-          :key="value"
-      >
-        {{ value }}
-      </li>
-    </ul>
+
 
     <h6 class="text-center"> -- </h6>
 
@@ -213,21 +205,33 @@ const repeatFavorito = computed(() => {
     </button>
   </section>
 
-  <section>
+  <section class="container text-center ">
+    <h4 class="text-center"> Tus favoritos </h4>
+    <ul class="list-group">
+      <li class="list-group-item"
+          v-for="(value, index) in arrayFavoritos"
+          :key="value"
+      >
+        {{ value }}
+      </li>
+    </ul>
+    <hr />
     <h4 :class="classCounter">{{ counter }}</h4>
-    <button @click="increment">
-      Aumentar
-    </button>
-    <button @click="decrement">
-      Disminuir
-    </button>
-    <button @click="resetCounter">
-      Reset
-    </button>
-    <!-- add es agregarFavoritos-->
-    <button @click="agregarFavorito" :disabled="repeatFavorito">
-      Add
-    </button>
+    <div class="btn-group">
+      <button @click="increment" class="btn btn-success">
+        Aumentar
+      </button>
+      <button @click="decrement" class="btn btn-danger">
+        Disminuir
+      </button>
+      <button @click="resetCounter" class="btn btn-secondary">
+        Reset
+      </button>
+      <!-- add es agregarFavoritos-->
+      <button @click="agregarFavorito" :disabled="repeatFavorito" class="btn btn-primary">
+        Add
+      </button>
+    </div>
     <br/>
     {{ arrayFavoritos }}
 
