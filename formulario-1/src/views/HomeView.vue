@@ -1,14 +1,14 @@
 <template>
   <form @submit.prevent="procesarFormulario">
-    <Input :tarea="tarea" />
+    <Input :coex="coex" />
   </form>
-  <ListaTareas />
+  <ListaCoex />
 </template>
 
 <script>
 // @ is an alias to /src
 import Input from "@/components/Input";
-import ListaTareas from "@/components/ListaTareas";
+import ListaCoex from "@/components/ListaCoex";
 import {mapActions} from 'vuex'
 
 const shortid = require('shortid')
@@ -16,40 +16,34 @@ const shortid = require('shortid')
 export default {
   name: 'HomeView',
   components: {
+    ListaCoex,
     Input,
-    ListaTareas
   },
   data() {
     return {
-      tarea: {
+      coex: {
         id: '',
-        nombre: '',
-        categorias: [],
-        opciones: '',
-        numero: 0
+        name: '',
       }
     }
   },
   methods: {
-    ...mapActions(['setTareas']),
+    ...mapActions(['cargarRelacionesFamiliares']),
     procesarFormulario() {
-      console.log(this.tarea)
-      if (this.tarea.nombre.trim() === "") {
+      console.log(this.coex)
+      if (this.coex.name.trim() === "") {
         console.log('vacío')
         return
       }
 
       // generar id
-      this.tarea.id = shortid.generate()
-      console.log(this.tarea.id)
+      this.coex.id = shortid.generate()
+      console.log(this.coex.id)
       // enviaremos los datos
-      this.setTareas(this.tarea)
-      this.tarea = {
+
+      this.coex = {
         id: '',
-        nombre: '',
-        categorias: [],
-        opciones: '',
-        numero: 0
+        name: '',
       }
     }
   },

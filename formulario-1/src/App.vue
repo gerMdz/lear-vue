@@ -17,10 +17,10 @@ export default {
     Navbar
   },
   methods: {
-    ...mapActions(['cargarLocalStorage'])
+    ...mapActions(['cargarRelacionesFamiliares'])
   },
   created() {
-    this.cargarLocalStorage()
+    this.cargarRelacionesFamiliares()
   }
 }
 </script>
