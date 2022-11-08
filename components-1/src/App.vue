@@ -1,42 +1,70 @@
-<script>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
-import {ref} from "vue";
-export default {
-  setup() {
-    const counter = ref(0)
+<script setup>
+// import HelloWorld from './components/HelloWorld.vue'
+// import TheWelcome from './components/TheWelcome.vue'
+import ButtonCounter from './components/ButtonCounter.vue'
+import BlogPost from '@/components/BlogPost.vue'
+// export default {
 
-    const increment = () => {
-      counter.value ++
-    }
-    return {
-      counter,
-      increment
-    }
-  }
-}
+
+//   components: {ButtonCounter}
+// }
+// Esto es con setup con Composition
+//
+// import {ref} from "vue";
+// export default {
+//   setup() {
+//     const counter = ref(0)
+//
+//     const increment = () => {
+//       counter.value ++
+//     }
+//     return {
+//       counter,
+//       increment
+//     }
+//   }
+// }
+
+// Esto es Option API
+
+// export default {
+//   data(){
+//     return {
+//       counter: 0,
+//     }
+//   },
+//   methods: {
+//     increment(){
+//       this.counter++
+//     }
+//   }
+// }
 
 </script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125"/>
+  <div class="container">
+    <header>
+      <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125"/>
 
-    <div class="wrapper">
-            <HelloWorld msg="You did it!" />
-      <button @click="increment"> {{ counter }}</button>
-    </div>
-  </header>
+      <ButtonCounter/>
 
-  <main>
-        <TheWelcome />
-  </main>
 
-  <section>
-    <div>
-      APP
-    </div>
-  </section>
+
+      <div class="wrapper">
+        <HelloWorld msg="You did it!"/>
+        <!--      <button @click="increment"> {{ counter }}</button>-->
+        <!--      <ButtonCounter />-->
+      </div>
+    </header>
+    <section class="col-sm-12">
+      <BlogPost title="Post 1"/>
+      <BlogPost title="Post 2"/>
+      <BlogPost title="Post 3"/>
+    </section>
+
+
+  </div>
 </template>
 
 <style scoped>
