@@ -58,9 +58,10 @@ import BlogPost from '@/components/BlogPost.vue'
       </div>
     </header>
     <section class="col-sm-12">
-      <BlogPost title="Post 1"/>
-      <BlogPost title="Post 2"/>
-      <BlogPost title="Post 3"/>
+      <BlogPost title="Post 1" :id="1" body="descripcion 1" colorText="primary"/>
+      <BlogPost title="Post 2" :id="2" body="descripcion 2" colorText="secondary"/>
+      <BlogPost title="Post 3" :id="3" body="descripcion 3" colorText="info"/>
+      <BlogPost title="Post 4" :id="4"  colorText="success"/>
     </section>
 
 

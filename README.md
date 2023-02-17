@@ -21,3 +21,7 @@ npm init vue@latest
 cd name_proyect
 npm install
 npm run dev
+
+### Next 
+
+[Cap 49](https://www.udemy.com/course/curso-vue/learn/lecture/33481312#overview)
