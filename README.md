@@ -24,4 +24,4 @@ npm run dev
 
 ### Next 
 
-[Cap 49](https://www.udemy.com/course/curso-vue/learn/lecture/33481312#overview)
+[Cap 49](https://www.udemy.com/course/curso-vue/learn/lecture/33481434#overview)
