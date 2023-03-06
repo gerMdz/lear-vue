@@ -1,8 +1,24 @@
 <script setup>
 // import HelloWorld from './components/HelloWorld.vue'
 // import TheWelcome from './components/TheWelcome.vue'
-import ButtonCounter from './components/ButtonCounter.vue'
+// import ButtonCounter from './components/ButtonCounter.vue'
 import BlogPost from '@/components/BlogPost.vue'
+import {ref} from "vue";
+import HelloWorld from "@/components/HelloWorld.vue";
+
+const posts = ref([
+  {title: 'Post 1', id: '1', body: 'description 1', colorText: 'primary'},
+  {title: 'Post 2', id: '2', body: 'description 2', colorText: 'secondary'},
+  {title: 'Post 3', id: '3', body: 'description 30', colorText: 'info'},
+  {title: 'Post 4', id: '4', body: '', colorText: 'success'}
+])
+
+const favorito = ref("");
+
+
+const cambiarFavorito = (title) => {
+  favorito.value = title
+}
 // export default {
 
 
@@ -44,11 +60,11 @@ import BlogPost from '@/components/BlogPost.vue'
 
 <template>
   <div class="container">
+
     <header>
       <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125"/>
-
-      <ButtonCounter/>
-
+      <h2>Mis post favoritos: {{favorito}}</h2>
+<!--      <ButtonCounter/>-->
 
 
       <div class="wrapper">
@@ -57,11 +73,20 @@ import BlogPost from '@/components/BlogPost.vue'
         <!--      <ButtonCounter />-->
       </div>
     </header>
+
+
     <section class="col-sm-12">
-      <BlogPost title="Post 1" :id="1" body="descripcion 1" colorText="primary"/>
-      <BlogPost title="Post 2" :id="2" body="descripcion 2" colorText="secondary"/>
-      <BlogPost title="Post 3" :id="3" body="descripcion 3" colorText="info"/>
-      <BlogPost title="Post 4" :id="4"  colorText="success"/>
+      <h2>Mis posts</h2>
+      <BlogPost
+          v-for="post in posts"
+          :key="post.id"
+          :title="post.title"
+          :body="post.body"
+          :colorText="post.colorText"
+          @cambiarFavorito="cambiarFavorito"
+      >
+      </BlogPost>
+
     </section>
 
 

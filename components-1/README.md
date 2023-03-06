@@ -27,3 +27,10 @@ npm run dev
 ```sh
 npm run build
 ```
+
+#### Por donde voy
+[cap-50](https://www.udemy.com/course/curso-vue/learn/lecture/33481434#overview)
+
+#### A donde voy
+[cap 52](https://www.udemy.com/course/curso-vue/learn/lecture/33481512#overview)
+
