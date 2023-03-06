@@ -1,27 +1,19 @@
-# lear-vue
+# vuex-1
 
-[Vue-udemy](https://bluuweb.github.io/vue-udemy/)
+## Project setup
+```
+npm install
+```
 
-[JS - Fundamentos](https://bluuweb.github.io/javascript/fundamentos/)
+### Compiles and hot-reloads for development
+```
+npm run serve
+```
 
-[Destructuring](https://wesbos.com/destructuring-objects)
-
-[Fundamentos Vue 3](https://bluuweb.github.io/vue-udemy/30-01-fundamentos/)
-
+### Compiles and minifies for production
 ```
 npm run build
 ```
 
-Gracias BlueWeb
-
-https://bluuweb.github.io/vue-udemy/30-02-components/
-
-npm init vue@latest
-
-cd name_proyect
-npm install
-npm run dev
-
-### Next 
-
-[Cap 49](https://www.udemy.com/course/curso-vue/learn/lecture/33481434#overview)
+### Customize configuration
+See [Configuration Reference](https://cli.vuejs.org/config/).
