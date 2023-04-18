@@ -27,3 +27,18 @@ npm run dev
 ```sh
 npm run build
 ```
+
+### Recursos
+
+[jsonplaceholder](http://jsonplaceholder.typicode.com/)
+
+
+
+#### Por donde voy
+[cap-55](https://www.udemy.com/course/curso-vue/learn/lecture/33482942#overview)
+
+* defineEmits()
+
+#### A donde voy
+[cap 56](https://www.udemy.com/course/curso-vue/learn/lecture/33482978#overview)
+
