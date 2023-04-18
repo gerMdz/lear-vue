@@ -6,12 +6,11 @@ import BlogPost from '@/components/BlogPost.vue'
 import {ref} from "vue";
 import HelloWorld from "@/components/HelloWorld.vue";
 
-const posts = ref([
-  {title: 'Post 1', id: '1', body: 'description 1', colorText: 'primary'},
-  {title: 'Post 2', id: '2', body: 'description 2', colorText: 'secondary'},
-  {title: 'Post 3', id: '3', body: 'description 30', colorText: 'info'},
-  {title: 'Post 4', id: '4', body: '', colorText: 'success'}
-])
+const posts = ref([])
+
+fetch('http://jsonplaceholder.typicode.com/posts')
+    .then((res) => res.json())
+    .then((data) => posts.value = data);
 
 const favorito = ref("");
 
@@ -59,19 +58,12 @@ const cambiarFavorito = (title) => {
 </script>
 
 <template>
-  <div class="container">
+  <div class="container-fluid">
 
     <header>
       <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125"/>
-      <h2>Mis post favoritos: {{favorito}}</h2>
-<!--      <ButtonCounter/>-->
+      <h2>Mis post favoritos: <small>{{ favorito }}</small></h2>
 
-
-      <div class="wrapper">
-        <HelloWorld msg="You did it!"/>
-        <!--      <button @click="increment"> {{ counter }}</button>-->
-        <!--      <ButtonCounter />-->
-      </div>
     </header>
 
 
@@ -83,7 +75,7 @@ const cambiarFavorito = (title) => {
           :title="post.title"
           :body="post.body"
           :colorText="post.colorText"
-          @cambiarFavorito="cambiarFavorito"
+          @cambiarFavoritoNombre="cambiarFavorito"
       >
       </BlogPost>
 
