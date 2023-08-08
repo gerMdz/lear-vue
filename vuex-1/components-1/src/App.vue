@@ -19,6 +19,7 @@ const cambiarFavorito = (title) => {
   favorito.value = title
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 // export default {
 
 
@@ -56,7 +57,7 @@ const cambiarFavorito = (title) => {
 //   }
 // }
 
-=======
+
 
 const sig = () => {
   inicio.value +=  + postPorPage;
@@ -66,7 +67,7 @@ const ant = () => {
   inicio.value += - postPorPage;
   fin.value +=  - postPorPage;
 }
->>>>>>> 235656a24b6d6cbfb42450375b8dabcafe51bf0c
+
 </script>
 
 
@@ -81,11 +82,13 @@ const ant = () => {
     <PaginatePost @next="sig" @ant="ant" :first="inicio" :end="fin" class="mb-2"/>
 
 
-    <section class="col-sm-12">
-<<<<<<< HEAD
-=======
 
->>>>>>> 235656a24b6d6cbfb42450375b8dabcafe51bf0c
+    <section class="col-sm-12">
+
+
+    <section class="col-sm-12">
+
+
       <h2>Mis posts</h2>
       <BlogPost
           v-for="post in posts"
