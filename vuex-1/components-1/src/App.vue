@@ -18,6 +18,7 @@ const favorito = ref("");
 const cambiarFavorito = (title) => {
   favorito.value = title
 }
+<<<<<<< HEAD
 // export default {
 
 
@@ -55,7 +56,19 @@ const cambiarFavorito = (title) => {
 //   }
 // }
 
+=======
+
+const sig = () => {
+  inicio.value +=  + postPorPage;
+  fin.value +=  + postPorPage;
+}
+const ant = () => {
+  inicio.value += - postPorPage;
+  fin.value +=  - postPorPage;
+}
+>>>>>>> 235656a24b6d6cbfb42450375b8dabcafe51bf0c
 </script>
+
 
 <template>
   <div class="container-fluid">
@@ -65,13 +78,19 @@ const cambiarFavorito = (title) => {
       <h2>Mis post favoritos: <small>{{ favorito }}</small></h2>
 
     </header>
+    <PaginatePost @next="sig" @ant="ant" :first="inicio" :end="fin" class="mb-2"/>
 
 
     <section class="col-sm-12">
+<<<<<<< HEAD
+=======
+
+>>>>>>> 235656a24b6d6cbfb42450375b8dabcafe51bf0c
       <h2>Mis posts</h2>
       <BlogPost
           v-for="post in posts"
           :key="post.id"
+          :id="post.id"
           :title="post.title"
           :body="post.body"
           :colorText="post.colorText"
