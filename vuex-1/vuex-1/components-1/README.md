@@ -32,6 +32,8 @@ npm run build
 
 [jsonplaceholder](http://jsonplaceholder.typicode.com/)
 
+
+
 #### Cap 55
 
 * defineEmits()
@@ -42,5 +44,5 @@ npm run build
 * * Marcar el índice “x, y” (inicia en 0 y trae 3)
 
 #### A donde voy
-[cap 62](https://www.udemy.com/course/curso-vue/learn/lecture/33483280#questions)
+[cap 59](https://www.udemy.com/course/curso-vue/learn/lecture/33483112#overview)
 
