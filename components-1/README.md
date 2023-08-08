@@ -32,13 +32,15 @@ npm run build
 
 [jsonplaceholder](http://jsonplaceholder.typicode.com/)
 
-
-
-#### Por donde voy
-[cap-55](https://www.udemy.com/course/curso-vue/learn/lecture/33482942#overview)
+#### Cap 55
 
 * defineEmits()
 
+#### Cap 57
+* slice
+* * Solo en array, ya que corta según el índice.
+* * Marcar el índice “x, y” (inicia en 0 y trae 3)
+
 #### A donde voy
-[cap 56](https://www.udemy.com/course/curso-vue/learn/lecture/33482978#overview)
+[cap 62](https://www.udemy.com/course/curso-vue/learn/lecture/33483280#questions)
 
