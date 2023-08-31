@@ -40,7 +40,12 @@ npm run build
 * slice
 * * Solo en array, ya que corta según el índice.
 * * Marcar el índice “x, y” (inicia en 0 y trae 3)
+*
+
+#### Cap 62 
+* computed
+
 
 #### A donde voy
-[cap 62](https://www.udemy.com/course/curso-vue/learn/lecture/33483280#questions)
+[cap 63](https://www.udemy.com/course/curso-vue/learn/lecture/33483290#questions)
 

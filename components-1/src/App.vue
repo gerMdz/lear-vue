@@ -3,10 +3,26 @@
 // import TheWelcome from './components/TheWelcome.vue'
 // import ButtonCounter from './components/ButtonCounter.vue'
 import BlogPost from '@/components/BlogPost.vue'
-import {ref} from "vue";
+import {computed, ref} from "vue";
 import HelloWorld from "@/components/HelloWorld.vue";
+import PaginatePost from "@/components/PaginatePost.vue";
 
 const posts = ref([])
+
+const inicio = ref(0);
+
+const postPorPage = 10;
+
+const fin = ref(postPorPage)
+
+const sig = () => {
+  inicio.value = inicio.value + postPorPage;
+  fin.value = fin.value + postPorPage;
+}
+const ant = () => {
+  inicio.value = inicio.value - postPorPage;
+  fin.value = fin.value - postPorPage;
+}
 
 fetch('http://jsonplaceholder.typicode.com/posts')
     .then((res) => res.json())
@@ -14,12 +30,17 @@ fetch('http://jsonplaceholder.typicode.com/posts')
 
 const favorito = ref("");
 
+// Propiedad computada
+// Recibe una función de callback y debe recibir algo
+// el .value. es en las funciones y no en el template
+
+const maxLength = computed(() => posts.value.length)
+
+
 
 const cambiarFavorito = (title) => {
   favorito.value = title
 }
-<<<<<<< HEAD
-<<<<<<< HEAD
 // export default {
 
 
@@ -59,14 +80,6 @@ const cambiarFavorito = (title) => {
 
 
 
-const sig = () => {
-  inicio.value +=  + postPorPage;
-  fin.value +=  + postPorPage;
-}
-const ant = () => {
-  inicio.value += - postPorPage;
-  fin.value +=  - postPorPage;
-}
 
 </script>
 
@@ -79,11 +92,10 @@ const ant = () => {
       <h2>Mis post favoritos: <small>{{ favorito }}</small></h2>
 
     </header>
-    <PaginatePost @next="sig" @ant="ant" :first="inicio" :end="fin" class="mb-2"/>
-
-
-
-    <section class="col-sm-12">
+    <PaginatePost
+        @next="sig" @ant="ant" :inicio="inicio" :fin="fin"
+                  :maxLength="maxLength"
+                  class="mb-2"/>
 
 
     <section class="col-sm-12">
@@ -91,13 +103,14 @@ const ant = () => {
 
       <h2>Mis posts</h2>
       <BlogPost
-          v-for="post in posts"
+          v-for="post in posts.slice(inicio,fin)"
           :key="post.id"
           :id="post.id"
           :title="post.title"
           :body="post.body"
           :colorText="post.colorText"
           @cambiarFavoritoNombre="cambiarFavorito"
+          class="mb-2"
       >
       </BlogPost>
 
