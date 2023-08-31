@@ -1,4 +1,4 @@
-# components-1
+# vue-project
 
 This template should help get you started developing with Vue 3 in Vite.
 
@@ -28,19 +28,17 @@ npm run dev
 npm run build
 ```
 
-### Recursos
 
-[jsonplaceholder](http://jsonplaceholder.typicode.com/)
+##### template + v+for + v-if
+```
+    <ul>
+      <template v-for="item in arrayProductos" :key="item.name">
+        <li
+            v-if="item.stock > 0"
+        >
+          {{ item.name }} - {{ item.price }}
+        </li>
+      </template>
 
-#### Cap 55
-
-* defineEmits()
-
-#### Cap 57
-* slice
-* * Solo en array, ya que corta según el índice.
-* * Marcar el índice “x, y” (inicia en 0 y trae 3)
-
-#### A donde voy
-[cap 62](https://www.udemy.com/course/curso-vue/learn/lecture/33483280#questions)
-
+    </ul>
+```
