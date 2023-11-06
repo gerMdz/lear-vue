@@ -77,8 +77,7 @@ getData()
 const favorito = ref("");
 
 // Propiedad computada
-// Recibe una función de callback y debe recibir algo
-// el `.value` es en las funciones y no en el template
+// Recibe una función de callback y debe recibir algo el `.value` es en las funciones y no en el template
 
 const maxLength = computed(() => posts.value.length)
 
