@@ -27,3 +27,7 @@ npm run dev
 ```sh
 npm run build
 ```
+
+
+#### Next 
+(Cap 74)(https://www.udemy.com/course/curso-vue/learn/lecture/33490134#questions/20258624)

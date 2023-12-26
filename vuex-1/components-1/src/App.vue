@@ -3,23 +3,88 @@
 // import TheWelcome from './components/TheWelcome.vue'
 // import ButtonCounter from './components/ButtonCounter.vue'
 import BlogPost from '@/components/BlogPost.vue'
-import {ref} from "vue";
+import {computed, onMounted, ref} from "vue";
 import HelloWorld from "@/components/HelloWorld.vue";
+import PaginatePost from "@/components/PaginatePost.vue";
+import LoadingSpinner from "@/components/LoadingSpinner.vue";
 
 const posts = ref([])
 
-fetch('http://jsonplaceholder.typicode.com/posts')
-    .then((res) => res.json())
-    .then((data) => posts.value = data);
+const inicio = ref(0);
+
+const postPorPage = 10;
+
+const fin = ref(postPorPage)
+
+let loading = ref(true)
+
+
+const sig = () => {
+  inicio.value = inicio.value + postPorPage;
+  fin.value = fin.value + postPorPage;
+}
+const ant = () => {
+  inicio.value = inicio.value - postPorPage;
+  fin.value = fin.value - postPorPage;
+}
+
+// Alternativa onMounted
+
+// onMounted(async () => {
+//   try {
+//     const res = await fetch('http://jsonplaceholder.typicode.com/posts')
+//     posts.value = await  res.json();
+//   }catch (error) {
+//
+//   }finally {
+//     loading.value = false
+//   }
+// })
+
+// Alternativa fetch directo
+
+// fetch('http://jsonplaceholder.typicode.com/posts')
+//     .then((res) => res.json())
+//     .then((data) => {
+//       posts.value = data
+//     })
+//     .catch(e => console.log(e))
+//     .finally(() => {
+//       // Prueba de concepto para mostrar el spinner
+//       // setTimeout(()=>{
+//       //   loading.value = false
+//       // },1000)
+//       loading.value = false
+//     })
+//
+// ;
+
+// Alternativa fetch with async
+
+const getData = async () => {
+  try {
+    const res = await fetch('http://jsonplaceholder.typicode.com/posts')
+    posts.value = await res.json();
+  } catch (error) {
+
+  } finally {
+    loading.value = false
+  }
+}
+
+getData()
 
 const favorito = ref("");
+
+// Propiedad computada
+// Recibe una función de callback y debe recibir algo el `.value` es en las funciones y no en el template
+
+const maxLength = computed(() => posts.value.length)
 
 
 const cambiarFavorito = (title) => {
   favorito.value = title
 }
-<<<<<<< HEAD
-<<<<<<< HEAD
 // export default {
 
 
@@ -58,32 +123,21 @@ const cambiarFavorito = (title) => {
 // }
 
 
-
-const sig = () => {
-  inicio.value +=  + postPorPage;
-  fin.value +=  + postPorPage;
-}
-const ant = () => {
-  inicio.value += - postPorPage;
-  fin.value +=  - postPorPage;
-}
-
 </script>
 
 
 <template>
-  <div class="container-fluid">
 
+  <LoadingSpinner v-if="loading"/>
+  <div class="container" v-else>
     <header>
       <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125"/>
-      <h2>Mis post favoritos: <small>{{ favorito }}</small></h2>
-
+      <h2>Mis post favoritos 63: <small>{{ favorito }}</small></h2>
     </header>
-    <PaginatePost @next="sig" @ant="ant" :first="inicio" :end="fin" class="mb-2"/>
-
-
-
-    <section class="col-sm-12">
+    <PaginatePost
+        @next="sig" @ant="ant" :inicio="inicio" :fin="fin"
+        :maxLength="maxLength"
+        class="mb-2"/>
 
 
     <section class="col-sm-12">
@@ -91,13 +145,14 @@ const ant = () => {
 
       <h2>Mis posts</h2>
       <BlogPost
-          v-for="post in posts"
+          v-for="post in posts.slice(inicio,fin)"
           :key="post.id"
           :id="post.id"
           :title="post.title"
           :body="post.body"
           :colorText="post.colorText"
           @cambiarFavoritoNombre="cambiarFavorito"
+          class="mb-2"
       >
       </BlogPost>
 
