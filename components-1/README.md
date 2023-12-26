@@ -47,5 +47,7 @@ npm run build
 
 
 #### A donde voy
-[cap 63](https://www.udemy.com/course/curso-vue/learn/lecture/33483290#questions)
+[cap 67](https://www.udemy.com/course/curso-vue/learn/lecture/33489668#questions)
+
+Aquí > Proyectos/vue-cdn/vuex-1/components-1/src/App.vue
 
