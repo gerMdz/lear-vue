@@ -29,5 +29,13 @@ npm run build
 ```
 
 
+> Cap 74 v-for
+> Cap 75 RouterLink vistas dinámicas
+> Cap 76 params
+> Cap 77 Axios
+> Cap 78 useRoute (sin r)
+> Cap 79 useRouter (con r)
+> Cap 80 mostrar info de la api
+
 #### Next 
-(Cap 74)(https://www.udemy.com/course/curso-vue/learn/lecture/33490134#questions/20258624)
+(Cap 81)(https://www.udemy.com/course/curso-vue/learn/lecture/33490698#questions/20258624)

@@ -2,6 +2,7 @@
   <div class="about">
     <h1>Acerca de</h1>
   </div>
+  <Yo />
 </template>
 
 <style>
@@ -13,3 +14,6 @@
   }
 }
 </style>
+<script setup>
+import Yo from "@/App.vue";
+</script>
