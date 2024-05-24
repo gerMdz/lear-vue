@@ -1,27 +1,41 @@
 <script setup>
-import { RouterLink, RouterView } from 'vue-router'
+import {RouterLink, RouterView} from 'vue-router'
 import HelloWorld from './components/HelloWorld.vue'
 import Yo from "@/views/Yo.vue";
 </script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
+  <nav class="navbar bg-body-tertiary">
+    <div class="container">
 
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
+      <router-link class="navbar-brand" to="/">
+        <img src="@/assets/logo.svg" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+        Api con Blue y Udemy
+      </router-link>
 
-
-      <nav>
-        <RouterLink to="/">Inicio</RouterLink>
-        <RouterLink to="/about">Acerca de</RouterLink>
-        <RouterLink to="/me">Mi</RouterLink>
-        <RouterLink to="/yo">Yo</RouterLink>
-      </nav>
+      <router-link to="/" active-class="active">Home</router-link>
+      <router-link to="/me" active-class="active">Yo</router-link>
+      <router-link active-class="active" to="/yo">Pokemons</router-link>
     </div>
-  </header>
+  </nav>
+  <!--  <header>-->
+  <!--    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />-->
 
-  <RouterView />
+  <!--    <div class="wrapper">-->
+  <!--      <HelloWorld msg="You did it!" />-->
+
+
+  <!--      <nav>-->
+  <!--        <RouterLink to="/">Inicio</RouterLink>-->
+  <!--        <RouterLink to="/about">Acerca de</RouterLink>-->
+  <!--        <RouterLink to="/me">Mi</RouterLink>-->
+  <!--        <RouterLink to="/yo">Yo</RouterLink>-->
+  <!--      </nav>-->
+  <!--    </div>-->
+  <!--  </header>-->
+  <div class="container">
+    <RouterView/>
+  </div>
   <footer>
     Un pie de página
   </footer>

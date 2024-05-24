@@ -1,6 +1,6 @@
 <template>
   <h2>Poke nombre: {{ $route.params.name }}</h2>
-  <img  alt="" :src="poke.sprites.front_default"/>
+  <img  alt="" :src="poke.sprites?.front_default"/>
 
   <button @click="volver"> &lt- Volver</button>
 </template>

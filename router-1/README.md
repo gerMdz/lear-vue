@@ -36,6 +36,7 @@ npm run build
 > Cap 78 useRoute (sin r)
 > Cap 79 useRouter (con r)
 > Cap 80 mostrar info de la api
+> Cap 84 not found
 
 #### Next 
-(Cap 81)(https://www.udemy.com/course/curso-vue/learn/lecture/33490698#questions/20258624)
+(Cap 85)(https://www.udemy.com/course/curso-vue/learn/lecture/33491018#questions/20258624)

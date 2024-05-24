@@ -3,6 +3,7 @@ import HomeView from '../views/HomeView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
+  // linkActiveClass: "active", // Esta es global.
   routes: [
     {
       path: '/',
@@ -31,6 +32,11 @@ const router = createRouter({
       path: '/poke/:name',
       name: 'poke',
       component: () => import('../views/PokeView.vue')
+    },
+    {
+      path: "/:pathMatch(.*)*",
+      name: "NotFound",
+      component: () => import('../views/NotFoundView.vue')
     }
   ]
 })
