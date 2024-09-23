@@ -24,9 +24,9 @@ const router = createRouter({
       component: () => import('../views/Me.vue')
     },
     {
-      path: '/yo',
-      name: 'yo',
-      component: () => import('../views/Yo.vue')
+      path: '/all',
+      name: 'all',
+      component: () => import('../views/AllPokes.vue')
     },
     {
       path: '/poke/:name',

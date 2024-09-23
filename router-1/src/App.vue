@@ -1,7 +1,7 @@
 <script setup>
 import {RouterLink, RouterView} from 'vue-router'
 import HelloWorld from './components/HelloWorld.vue'
-import Yo from "@/views/Yo.vue";
+import All from "@/views/AllPokes.vue";
 </script>
 
 <template>
@@ -15,7 +15,7 @@ import Yo from "@/views/Yo.vue";
 
       <router-link to="/" active-class="active">Home</router-link>
       <router-link to="/me" active-class="active">Yo</router-link>
-      <router-link active-class="active" to="/yo">Pokemons</router-link>
+      <router-link active-class="active" to="/all">Pokemons</router-link>
     </div>
   </nav>
   <!--  <header>-->

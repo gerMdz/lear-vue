@@ -37,6 +37,7 @@ npm run build
 > Cap 79 useRouter (con r)
 > Cap 80 mostrar info de la api
 > Cap 84 not found
+> Cap 87 composables
 
 #### Next 
-(Cap 85)(https://www.udemy.com/course/curso-vue/learn/lecture/33491018#questions/20258624)
+[cap 88](https://www.udemy.com/course/curso-vue/learn/lecture/33491598#questions/20258624)
