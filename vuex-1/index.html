@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--    <script src="https://unpkg.com/vue@3"></script>-->
+    <script src="https://unpkg.com/vue@3.1.1/dist/vue.global.prod.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+            integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+            integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+            crossorigin="anonymous"></script>
+
+</head>
+<body>
+<div id="app">
+    <h1>{{ mayusTexto }}</h1>
+    <h2 class="bg-dark"
+        :class="colorCantidad"
+    >
+        Mi valor: {{ cantidad }}
+    </h2>
+    <a :href="enlaceYoutube">link</a>
+    <hr/>
+    <h2 v-if="estado"> Cuenta activa </h2>
+    <h2 v-else> Cuenta desactivada </h2>
+    <hr/>
+    <h3 v-if="cantidad > 500">Cantidad: {{ cantidad }}</h3>
+    <h3 v-else-if="cantidad <= 500 && cantidad > 0">
+        Cantidad:
+        <span style="color: red">  {{ cantidad }} </span>
+    </h3>
+    <h3 v-else>
+        Sin Cantidad: {{ cantidad }}
+    </h3>
+    <hr>
+    <h4>Servicios </h4>
+    <ul>
+        <li v-for="(item, index) in servicios" :key="index"><small>{{ index + 1 }} </small> {{ item }}</li>
+    </ul>
+
+    <hr>
+    <button @click="agregarSaldo" class="btn btn-primary">Agregar saldo</button>
+    <button @click="disminuirSaldo(70)" class="btn btn-primary" :disabled="desactivar">Restar saldo</button>
+
+    <footer-banco
+            :valor="cantidad"
+            fecha="Abr 2022"
+    />
+</div>
+<script src="main.js"></script>
+<script src="components/Footer.js"></script>
+<script>
+    const mountedApp = app.mount('#app');
+
+    // fetch api
+
+    // const url_pokemon = 'https://pokeapi.co/api/v2/pokemon/';
+
+    // fetch espera una promesa
+    fetch('https://pokeapi.co/api/v2/pokemon/')
+        .then(res => res.json())
+        .then(data => {
+            // console.log(data.results)
+            data.results.forEach(element => {
+                // console.log(element.name)
+            })
+        })
+        .catch(error => console.log(error))
+    ;
+
+    // async y await
+
+    const obtenerPokemones = async () => {
+        try {
+            const respuesta = await fetch('https://pokeapi.co/api/v2/pokemon/')
+            let arrayNombres = []
+            const data = await respuesta.json()
+            data.results.forEach(element => {
+                arrayNombres.push(element.name)
+            })
+            // map
+            // const arrayName = data.results.map(poke => poke.name )
+
+            // filter
+            // const arrayFilter = data.results.filter(poke => poke.name === 'raticate' )
+            // filter negativo
+            const arrayFilter = data.results.filter(poke => poke.name !== 'raticate' )
+            console.log(arrayFilter)
+        } catch (e) {
+            console.log(e)
+        }
+    }
+
+    obtenerPokemones();
+</script>
+
+
+</body>
+</html>
