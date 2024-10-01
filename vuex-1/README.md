@@ -17,3 +17,7 @@ npm run build
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+[]()
+
+Aquí > Proyectos/vue-cdn/vuex-1/components-1/src/App.vue
