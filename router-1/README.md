@@ -1,4 +1,4 @@
-# components-1
+# router-1
 
 This template should help get you started developing with Vue 3 in Vite.
 
@@ -28,19 +28,16 @@ npm run dev
 npm run build
 ```
 
-### Recursos
 
-[jsonplaceholder](http://jsonplaceholder.typicode.com/)
+> Cap 74 v-for
+> Cap 75 RouterLink vistas dinámicas
+> Cap 76 params
+> Cap 77 Axios
+> Cap 78 useRoute (sin r)
+> Cap 79 useRouter (con r)
+> Cap 80 mostrar info de la api
+> Cap 84 not found
+> Cap 87 composables
 
-#### Cap 55
-
-* defineEmits()
-
-#### Cap 57
-* slice
-* * Solo en array, ya que corta según el índice.
-* * Marcar el índice “x, y” (inicia en 0 y trae 3)
-
-#### A donde voy
-[cap 62](https://www.udemy.com/course/curso-vue/learn/lecture/33483280#questions)
-
+#### Next 
+[cap 88](https://www.udemy.com/course/curso-vue/learn/lecture/33491598#questions/20258624)
