@@ -1,12 +1,11 @@
 <template>
   <p v-if="loading" >Cargando datos ...</p>
+  <div class="alert alert-danger mt-2" v-if="errorData">{{ errorData}}</div>
   <div v-if="data">
     <h2>Poke nombre: {{ $route.params.name }}</h2>
     <img alt="" :src="data.sprites?.front_default"/>
   </div>
-  <h2 v-else>
-    No se encontró el pokemon
-  </h2>
+
 
   <button @click="volver" class="btn btn-outline-primary"> Volver</button>
 </template>
@@ -16,7 +15,7 @@ import {useRoute, useRouter} from "vue-router"
 import {useGetData} from '@/composables/getData.js'
 import {ref} from "vue";
 
-const {data, loading, getData} = useGetData()
+const {data, loading, getData, errorData} = useGetData()
 const ruta = useRoute()
 const rutas = useRouter()
 
