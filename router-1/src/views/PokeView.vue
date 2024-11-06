@@ -1,4 +1,5 @@
 <template>
+  <h2>Pokemon individual</h2>
   <p v-if="loading" >Cargando datos ...</p>
   <div class="alert alert-danger mt-2" v-if="errorData">{{ errorData}}</div>
   <div v-if="data">

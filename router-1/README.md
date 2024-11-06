@@ -10,6 +10,8 @@ This template should help get you started developing with Vue 3 in Vite.
 
 See [Vite Configuration Reference](https://vitejs.dev/config/).
 
+
+
 ## Project Setup
 
 ```sh
@@ -28,6 +30,8 @@ npm run dev
 npm run build
 ```
 
+### Documentación
+[pinia](https://bluuweb.github.io/vue-udemy/30-04-pinia/)
 
 > Cap 74 v-for
 > Cap 75 RouterLink vistas dinámicas
@@ -39,6 +43,8 @@ npm run build
 > Cap 84 not found
 > Cap 87 composables
 > Cap 90 paginación y muestra de errores
+
+
 
 #### Next 
 [cap 91](https://www.udemy.com/course/curso-vue/learn/lecture/33491896#questions/20258624)

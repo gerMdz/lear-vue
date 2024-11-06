@@ -5,7 +5,7 @@ import All from "@/views/AllPokes.vue";
 </script>
 
 <template>
-  <nav class="navbar bg-body-tertiary">
+  <nav class="navbar bg-dark navbar-dark">
     <div class="container">
 
       <router-link class="navbar-brand" to="/">
@@ -33,7 +33,7 @@ import All from "@/views/AllPokes.vue";
   <!--      </nav>-->
   <!--    </div>-->
   <!--  </header>-->
-  <div class="container">
+  <div class="container text-center">
     <RouterView/>
   </div>
   <footer>
