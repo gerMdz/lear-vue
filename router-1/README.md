@@ -38,6 +38,7 @@ npm run build
 > Cap 80 mostrar info de la api
 > Cap 84 not found
 > Cap 87 composables
+> Cap 90 paginación y muestra de errores
 
 #### Next 
-[cap 88](https://www.udemy.com/course/curso-vue/learn/lecture/33491598#questions/20258624)
+[cap 91](https://www.udemy.com/course/curso-vue/learn/lecture/33491896#questions/20258624)
