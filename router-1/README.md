@@ -47,4 +47,4 @@ npm run build
 
 
 #### Next 
-[cap 95](https://www.udemy.com/course/curso-vue/learn/lecture/33493134#questions/20258624)
+[cap 100](https://www.udemy.com/course/curso-vue/learn/lecture/33493370#overview)

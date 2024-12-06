@@ -2,11 +2,13 @@
 import {RouterLink, RouterView} from 'vue-router'
 import HelloWorld from './components/HelloWorld.vue'
 import All from "@/views/AllPokes.vue";
+
 </script>
 
 <template>
-  <nav class="navbar bg-dark navbar-dark">
-    <div class="container">
+  <div class="container">
+    <nav class="navbar bg-white navbar-dark">
+
 
       <router-link class="navbar-brand" to="/">
         <img src="@/assets/logo.svg" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
@@ -15,9 +17,12 @@ import All from "@/views/AllPokes.vue";
 
       <router-link to="/" active-class="active">Home</router-link>
       <router-link to="/me" active-class="active">Yo</router-link>
+      <router-link to="/favoritos" active-class="active">Favoritos</router-link>
       <router-link active-class="active" to="/all">Pokemons</router-link>
-    </div>
-  </nav>
+
+
+    </nav>
+
   <!--  <header>-->
   <!--    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />-->
 
@@ -33,26 +38,37 @@ import All from "@/views/AllPokes.vue";
   <!--      </nav>-->
   <!--    </div>-->
   <!--  </header>-->
-  <div class="container text-center">
+<!--  <div class="container text-center">-->
     <RouterView/>
   </div>
-  <footer>
-    Un pie de página
-  </footer>
+
+<!--  </div>-->
+  <br>
+  <div class="footer row">
+    <footer>
+      Un pie de página
+    </footer>
+  </div>
+
 </template>
 
 <style scoped>
+
 header {
   line-height: 1.5;
   max-height: 100vh;
+  max-width: 100vw;
 }
 
 .logo {
   display: block;
   margin: 0 auto 2rem;
 }
+.container {
+  width: 100vw;
+}
 
-nav {
+nav footer {
   width: 100%;
   font-size: 12px;
   text-align: center;
